@@ -14,7 +14,7 @@
         TARGET_KERNEL_ARCH="arm64"
         TARGET_PATCH_ARCH="aarch64"
         TARGET_FLOAT="hard"
-        TARGET_CPU="cortex-a53"
+        TARGET_CPU="cortex-a35"
         TARGET_CPU_FLAGS="+crc"
         TARGET_FPU="crypto-neon-fp-armv8"
         TARGET_FEATURES="32bit"
@@ -26,15 +26,15 @@
 
   # Additional kernel make parameters (for example to specify the u-boot loadaddress)
     KERNEL_MAKE_EXTRACMD=""
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3328-box.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3328-box-trn9.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3328-box-z28.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3328-roc-cc.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3328-rock64.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3328-rockbox.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-box.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-box-trn9.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-box-z28.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-roc-cc.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-rock64.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-rockbox.dtb"
 
   # Mali GPU family
-    MALI_FAMILY="450"
+    MALI_FAMILY="G31"
 
   # kernel serial console
     if [ "$UBOOT_SYSTEM" = "box-trn9" ]; then
