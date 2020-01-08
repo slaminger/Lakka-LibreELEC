@@ -5,7 +5,7 @@ This is a SoC device for RK3326
 **Build**
 
 
-* `PROJECT=Rockchip DEVICE=RK3326 ARCH=arm UBOOT_SYSTEM=odroid2go make image`
+* `PROJECT=Rockchip DEVICE=RK3326 ARCH=arm UBOOT_SYSTEM=odroidgo2 make image`
 * `PROJECT=Rockchip DEVICE=RK3328 ARCH=arm UBOOT_SYSTEM=box make image`
 * `PROJECT=Rockchip DEVICE=RK3328 ARCH=arm UBOOT_SYSTEM=box-trn9 make image`
 * `PROJECT=Rockchip DEVICE=RK3328 ARCH=arm UBOOT_SYSTEM=box-z28 make image`
