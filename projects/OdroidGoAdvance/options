@@ -18,7 +18,7 @@
         # arm1176jz-s arm1176jzf-s cortex-a8 cortex-a9 cortex-r4
         # cortex-r4f cortex-m3 cortex-m1 xscale iwmmxt iwmmxt2 ep9312.
         #
-        TARGET_CPU="cortex-a53"
+        TARGET_CPU="cortex-a35"
         TARGET_CPU_FLAGS="+crc+fp+simd"
         ;;
       arm)
@@ -36,7 +36,7 @@
         #
 	TARGET_KERNEL_ARCH="arm64"
 	TARGET_FLOAT=hard
-        TARGET_CPU="cortex-a53"
+        TARGET_CPU="cortex-a35"
         TARGET_CPU_FLAGS="+crc"
         TARGET_FPU="neon-fp16"
         ;;
@@ -49,7 +49,7 @@
     UBOOT_VERSION="hardkernel"
 
   # Configuration for u-boot
-    UBOOT_CONFIG="odroidc2_defconfig"
+    UBOOT_CONFIG=""
 
   # Target Configfile for u-boot
     UBOOT_CONFIGFILE="boot.ini"
@@ -65,7 +65,13 @@
 
   # Kernel to use. values can be:
   # default:  default mainline kernel
-    LINUX="amlogic-3.14"
+    LINUX="${LINUX:-rockchip-4.4}"
+    
+# Fix linux rockchip-4.4 compile
+     
+  if [ "$1" = "linux" -a "$LINUX" = "rockchip-4.4" ]; then
+    export KCFLAGS="-Wno-misleading-indentation -Wno-tautological-compare -Wno-unused-function"
+  fi
 
 
 ################################################################################
@@ -89,10 +95,7 @@
     OPENGL="no"
 
   # OpenGL-ES implementation to use (no / bcm2835-driver / gpu-viv-bin-mx6q / opengl-meson)
-    OPENGLES="opengl-meson"
-
-  # Amlogic Meson SOC family (8 / 6 / gxbb)
-    MESON_FAMILY="gxbb"
+    OPENGLES=mali-rockchip
 
   # include uvesafb support (yes / no)
     UVESAFB_SUPPORT="no"
@@ -114,32 +117,26 @@
   # Modules to install in initramfs for early boot
     INITRAMFS_MODULES="font softcursor bitblit fbcon"
 
-  # additional drivers to install:
-  # for a list of additinoal drivers see packages/linux-drivers
-  # Space separated list is supported,
-  # e.g. ADDITIONAL_DRIVERS="DRIVER1 DRIVER2"
-    ADDITIONAL_DRIVERS="$ADDITIONAL_DRIVERS gpu-aml"
-
   # additional Firmware to use (dvb-firmware, misc-firmware, wlan-firmware)
   # Space separated list is supported,
   # e.g. FIRMWARE="dvb-firmware misc-firmware wlan-firmware"
-    FIRMWARE="misc-firmware wlan-firmware dvb-firmware"
+    FIRMWARE="misc-firmware wlan-firmware rockchip-firmware"
 
   # build and install ATV IR remote support (yes / no)
     ATVCLIENT_SUPPORT="no"
 
-  # Amlogic IR remote support (yes / no)
-    AMREMOTE_SUPPORT="no"
-
   # build with installer (yes / no)
     INSTALLER_SUPPORT="no"
+    
+  # Testpackages for development (yes / no)
+    TESTING="yes"
 
   # kernel image name
     KERNEL_NAME="KERNEL"
+    
+  # Start boot partition at 16MiB, same as https://github.com/rockchip-linux/build images
+    SYSTEM_PART_START=32768
 
   # override some playlist core assignation
     RA_PLAYLIST_CORES="${RA_PLAYLIST_CORES//parallel_n64/mupen64plus}"
 
-  # disable some cores
-    LIBRETRO_CORES="${LIBRETRO_CORES// yabasanshiro /}"
-    LIBRETRO_CORES="${LIBRETRO_CORES// play /}"
