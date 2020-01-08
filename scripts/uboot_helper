@@ -180,8 +180,8 @@ devices = \
         'config': 'evb-rk3328_defconfig'
       },
        'RK3326': {
-      'box': {
-        'dtb': 'rk3326-box.dtb',
+      'odroidgo2': {
+        'dtb': 'rk3326-odroidgo2-linux.dtb',
         'config': 'evb-rk3326_defconfig'
       },
     },
