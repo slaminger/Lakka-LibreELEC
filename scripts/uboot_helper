@@ -155,7 +155,7 @@ devices = \
       },
     },
     'RK3328': {
-      'box': {
+      'odroidgo2': {
         'dtb': 'rk3328-box.dtb',
         'config': 'evb-rk3328_defconfig'
       },
