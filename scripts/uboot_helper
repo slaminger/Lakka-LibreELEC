@@ -179,6 +179,11 @@ devices = \
         'dtb': 'rk3328-rockbox.dtb',
         'config': 'evb-rk3328_defconfig'
       },
+       'RK3326': {
+      'box': {
+        'dtb': 'rk3326-box.dtb',
+        'config': 'evb-rk3326_defconfig'
+      },
     },
     'RK3399': {
       'khadas-edge': {
