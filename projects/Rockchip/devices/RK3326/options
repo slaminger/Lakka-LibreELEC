@@ -26,12 +26,8 @@
 
   # Additional kernel make parameters (for example to specify the u-boot loadaddress)
     KERNEL_MAKE_EXTRACMD=""
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-box.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-box-trn9.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-box-z28.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-roc-cc.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-rock64.dtb"
-    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3326-rockbox.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rk3326-odroidgo2-linux.dtb"
+
 
   # Mali GPU family
     MALI_FAMILY="G31"
