@@ -181,7 +181,7 @@ devices = \
       },
        'RK3326': {
       'odroidgo2': {
-        'dtb': 'rk3326-linux.dtb',
+        'dtb': 'rockchip/rk3326-linux.dtb',
         'config': 'evb-rk3326_defconfig'
       },
     },
