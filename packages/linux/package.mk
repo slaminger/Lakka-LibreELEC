@@ -18,7 +18,7 @@ PKG_PATCH_DIRS="$LINUX"
 case "$LINUX" in
   odroidgo2)
     PKG_VERSION="aa8bacf821e5c8ae6dd8cae8d64011c741659945"
-    PKG_SHA256="a2760fe89a15aa7be142fd25fb08ebd357c5d855c41f1612cf47c6e89de39bb3"
+    PKG_SHA256="2D96E60E72A8C363668515ACCCDA8F528ABDF02F0BE3076661986108FFB43BF5"
     PKG_URL="https://github.com/hardkernel/linux/archive/odroidgoA-4.4.y.zip"
     PKG_SOURCE_NAME="linux-$LINUX-$PKG_VERSION.tar.gz"
     ;;
